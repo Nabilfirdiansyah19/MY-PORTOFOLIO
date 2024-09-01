@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  height: 4px;
+  width: 450px;
+  --c: no-repeat linear-gradient(#071952 0 0);
+  background: var(--c), var(--c), #088395;
+  background-size: 60% 100%;
+  animation: l16 3s infinite;
+}
+@keyframes l16 {
+  0% {
+    background-position: -150% 0, -150% 0;
+  }
+  66% {
+    background-position: 250% 0, -150% 0;
+  }
+  100% {
+    background-position: 250% 0, 250% 0;
+  }
+}
+
+.ffont {
+  font-family: Chalkduster, fantasy;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader-dua {
+  height: 30px;
+  width: 100vw;
+  aspect-ratio: 6;
+  --c: #0000 64%, #37b7c3 66% 98%, #0000 101%;
+  background: radial-gradient(35% 146% at 50% 159%, var(--c)) 0 0,
+    radial-gradient(35% 146% at 50% -59%, var(--c)) 25% 100%;
+  background-size: calc(100% / 3) 50%;
+  background-repeat: repeat-x;
+  clip-path: inset(0 50%);
+  animation: l3 3s infinite alternate;
+}
+@keyframes l3 {
+  90%,
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .loader {
+    width: 350px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .loader {
+    width: 200px;
+  }
+}
+
+@layer components {
+  .list {
+    @apply inline-block w-20 h-8 text-[#EBF4F6] hover:text-[#37B7C3] hover:underline rounded text-center leading-8 max-[768px]:text-[#37B7C3];
+  }
+}
+
+@layer components {
+  @media (max-width: 768px) {
+    .animasi {
+      right: -100%;
+      transition: 0.7s;
+    }
+
+    .transisi {
+      right: 0;
+    }
+  }
+
+  .yy {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@layer components {
+  .nama {
+    @apply bg-red-50;
+  }
+}
